@@ -29,82 +29,95 @@ namespace mycon_for_win
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
             this.buttonScan = new System.Windows.Forms.Button();
             this.listBoxIPaddrs = new System.Windows.Forms.ListBox();
             this.textBoxLatestMessage = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.checkBoxLocalLP = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(4, 124);
+            this.buttonStart.Location = new System.Drawing.Point(4, 152);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(80, 23);
+            this.buttonStart.Size = new System.Drawing.Size(120, 23);
             this.buttonStart.TabIndex = 0;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(92, 124);
+            this.buttonStop.Location = new System.Drawing.Point(132, 152);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(80, 23);
+            this.buttonStop.Size = new System.Drawing.Size(116, 23);
             this.buttonStop.TabIndex = 0;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
             // buttonScan
             // 
             this.buttonScan.Location = new System.Drawing.Point(4, 4);
             this.buttonScan.Name = "buttonScan";
-            this.buttonScan.Size = new System.Drawing.Size(172, 23);
+            this.buttonScan.Size = new System.Drawing.Size(240, 23);
             this.buttonScan.TabIndex = 0;
             this.buttonScan.Text = "Scan";
             this.buttonScan.UseVisualStyleBackColor = true;
+            this.buttonScan.Click += new System.EventHandler(this.buttonScan_Click);
             // 
             // listBoxIPaddrs
             // 
+            this.listBoxIPaddrs.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.listBoxIPaddrs.FormattingEnabled = true;
             this.listBoxIPaddrs.ItemHeight = 12;
-            this.listBoxIPaddrs.Items.AddRange(new object[] {
-            "a",
-            "b",
-            "c",
-            "d",
-            "e",
-            "f",
-            "g",
-            "h",
-            "o",
-            "j",
-            "k"});
             this.listBoxIPaddrs.Location = new System.Drawing.Point(4, 32);
             this.listBoxIPaddrs.Name = "listBoxIPaddrs";
-            this.listBoxIPaddrs.Size = new System.Drawing.Size(168, 88);
+            this.listBoxIPaddrs.Size = new System.Drawing.Size(240, 88);
             this.listBoxIPaddrs.TabIndex = 1;
             // 
             // textBoxLatestMessage
             // 
             this.textBoxLatestMessage.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxLatestMessage.Location = new System.Drawing.Point(4, 152);
+            this.textBoxLatestMessage.Location = new System.Drawing.Point(120, 124);
             this.textBoxLatestMessage.Name = "textBoxLatestMessage";
             this.textBoxLatestMessage.ReadOnly = true;
-            this.textBoxLatestMessage.Size = new System.Drawing.Size(168, 19);
+            this.textBoxLatestMessage.Size = new System.Drawing.Size(124, 19);
             this.textBoxLatestMessage.TabIndex = 2;
             this.textBoxLatestMessage.Text = "________________";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            // 
+            // checkBoxLocalLP
+            // 
+            this.checkBoxLocalLP.AutoSize = true;
+            this.checkBoxLocalLP.Checked = true;
+            this.checkBoxLocalLP.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxLocalLP.Location = new System.Drawing.Point(4, 128);
+            this.checkBoxLocalLP.Name = "checkBoxLocalLP";
+            this.checkBoxLocalLP.Size = new System.Drawing.Size(97, 16);
+            this.checkBoxLocalLP.TabIndex = 3;
+            this.checkBoxLocalLP.Text = "local loopback";
+            this.checkBoxLocalLP.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 188);
+            this.ClientSize = new System.Drawing.Size(256, 186);
+            this.Controls.Add(this.checkBoxLocalLP);
             this.Controls.Add(this.textBoxLatestMessage);
             this.Controls.Add(this.listBoxIPaddrs);
             this.Controls.Add(this.buttonScan);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonStart);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mycon for windows";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -118,6 +131,8 @@ namespace mycon_for_win
         private System.Windows.Forms.Button buttonScan;
         private System.Windows.Forms.ListBox listBoxIPaddrs;
         private System.Windows.Forms.TextBox textBoxLatestMessage;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox checkBoxLocalLP;
     }
 }
 

@@ -30,6 +30,7 @@ namespace mycon_for_win
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
             this.buttonScan = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@ namespace mycon_for_win
             // 
             // buttonStart
             // 
+            this.buttonStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonStart.Location = new System.Drawing.Point(4, 152);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(120, 23);
@@ -52,6 +54,8 @@ namespace mycon_for_win
             // 
             // buttonStop
             // 
+            this.buttonStop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonStop.Location = new System.Drawing.Point(128, 152);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(116, 23);
@@ -62,6 +66,8 @@ namespace mycon_for_win
             // 
             // buttonScan
             // 
+            this.buttonScan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonScan.Location = new System.Drawing.Point(4, 4);
             this.buttonScan.Name = "buttonScan";
             this.buttonScan.Size = new System.Drawing.Size(208, 23);
@@ -72,6 +78,9 @@ namespace mycon_for_win
             // 
             // listBoxIPaddrs
             // 
+            this.listBoxIPaddrs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxIPaddrs.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.listBoxIPaddrs.FormattingEnabled = true;
             this.listBoxIPaddrs.ItemHeight = 12;
@@ -82,6 +91,8 @@ namespace mycon_for_win
             // 
             // textBoxLatestMessage
             // 
+            this.textBoxLatestMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLatestMessage.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBoxLatestMessage.Location = new System.Drawing.Point(120, 124);
             this.textBoxLatestMessage.Name = "textBoxLatestMessage";
@@ -96,6 +107,7 @@ namespace mycon_for_win
             // 
             // checkBoxLocalLP
             // 
+            this.checkBoxLocalLP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxLocalLP.AutoSize = true;
             this.checkBoxLocalLP.Checked = true;
             this.checkBoxLocalLP.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -108,6 +120,7 @@ namespace mycon_for_win
             // 
             // buttonAddIPAddr
             // 
+            this.buttonAddIPAddr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAddIPAddr.Location = new System.Drawing.Point(216, 4);
             this.buttonAddIPAddr.Name = "buttonAddIPAddr";
             this.buttonAddIPAddr.Size = new System.Drawing.Size(28, 23);
@@ -128,6 +141,7 @@ namespace mycon_for_win
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonAddIPAddr);
             this.Controls.Add(this.buttonStart);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mycon for windows";

@@ -37,6 +37,7 @@ namespace mycon_for_win
             this.textBoxLatestMessage = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.checkBoxLocalLP = new System.Windows.Forms.CheckBox();
+            this.buttonAddIPAddr = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -51,7 +52,7 @@ namespace mycon_for_win
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(132, 152);
+            this.buttonStop.Location = new System.Drawing.Point(128, 152);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(116, 23);
             this.buttonStop.TabIndex = 0;
@@ -63,7 +64,7 @@ namespace mycon_for_win
             // 
             this.buttonScan.Location = new System.Drawing.Point(4, 4);
             this.buttonScan.Name = "buttonScan";
-            this.buttonScan.Size = new System.Drawing.Size(240, 23);
+            this.buttonScan.Size = new System.Drawing.Size(208, 23);
             this.buttonScan.TabIndex = 0;
             this.buttonScan.Text = "Scan";
             this.buttonScan.UseVisualStyleBackColor = true;
@@ -105,16 +106,27 @@ namespace mycon_for_win
             this.checkBoxLocalLP.Text = "local loopback";
             this.checkBoxLocalLP.UseVisualStyleBackColor = true;
             // 
+            // buttonAddIPAddr
+            // 
+            this.buttonAddIPAddr.Location = new System.Drawing.Point(216, 4);
+            this.buttonAddIPAddr.Name = "buttonAddIPAddr";
+            this.buttonAddIPAddr.Size = new System.Drawing.Size(28, 23);
+            this.buttonAddIPAddr.TabIndex = 0;
+            this.buttonAddIPAddr.Text = "+";
+            this.buttonAddIPAddr.UseVisualStyleBackColor = true;
+            this.buttonAddIPAddr.Click += new System.EventHandler(this.buttonAddIPAddr_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 186);
+            this.ClientSize = new System.Drawing.Size(255, 186);
             this.Controls.Add(this.checkBoxLocalLP);
             this.Controls.Add(this.textBoxLatestMessage);
             this.Controls.Add(this.listBoxIPaddrs);
             this.Controls.Add(this.buttonScan);
             this.Controls.Add(this.buttonStop);
+            this.Controls.Add(this.buttonAddIPAddr);
             this.Controls.Add(this.buttonStart);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -133,6 +145,7 @@ namespace mycon_for_win
         private System.Windows.Forms.TextBox textBoxLatestMessage;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox checkBoxLocalLP;
+        private System.Windows.Forms.Button buttonAddIPAddr;
     }
 }
 

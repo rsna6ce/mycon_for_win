@@ -398,5 +398,44 @@ namespace mycon_for_win
         {
             TestJoystickButtons(); // フォームロード時にボタンマッピングを確認
         }
+
+        private void buttonAddIPAddr_Click(object sender, EventArgs e)
+        {
+            string input = Microsoft.VisualBasic.Interaction.InputBox(
+                "IPv4アドレスを入力してください（例: 192.168.1.100）",
+                "手動でIPアドレスを追加",
+                "",
+                -1, -1);
+
+            if (string.IsNullOrWhiteSpace(input))
+                return;
+
+            // 修正：System.Net.Sockets.AddressFamily を使う
+            if (System.Net.IPAddress.TryParse(input.Trim(), out System.Net.IPAddress ipAddress) &&
+                ipAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                string ipStr = ipAddress.ToString();
+
+                // 重複チェック
+                if (targetIPs.Contains(ipStr) || listBoxIPaddrs.Items.Contains(ipStr))
+                {
+                    MessageBox.Show($"IPアドレス {ipStr} はすでに登録されています。",
+                                    "重複", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // 追加
+                listBoxIPaddrs.Items.Add(ipStr);
+                targetIPs.Add(ipStr);
+
+                MessageBox.Show($"IPアドレス {ipStr} を追加しました。",
+                                "追加完了", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("有効なIPv4アドレスを入力してください。\n例: 192.168.1.100",
+                                "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

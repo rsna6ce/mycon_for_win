@@ -398,9 +398,6 @@ namespace mycon_for_win
 
                 listBoxIPaddrs.Items.Add(ipStr);
                 targetIPs.Add(ipStr);
-
-                MessageBox.Show($"IPアドレス {ipStr} を追加しました。",
-                                "追加完了", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
